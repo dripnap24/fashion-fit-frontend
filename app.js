@@ -1,7 +1,7 @@
 // Function for AI-Powered Outfit Suggestion
 async function getOutfitSuggestion() {
   // Placeholder for AI suggestion logic (can be enhanced with actual AI integration)
-  const res = await fetch('http://localhost:5000/api/ai', { method: 'GET' });
+  const res = await fetch('https://fashion-backend-ajqp.onrender.com', { method: 'GET' });
   const data = await res.json();
 
   if (data.suggestions && data.suggestions.length > 0) {
@@ -27,7 +27,7 @@ function addWardrobeItem() {
   formData.append("image", itemFile);
 
   // Send POST request to backend to add the item to the wardrobe
-  fetch("/api/wardrobe", {
+  fetch("/api/wardrobe", {'https://fashion-backend-ajqp.onrender.com'
       method: "POST",
       body: formData,
   })
@@ -60,7 +60,7 @@ function addWardrobeItem() {
 
 
     // Send the data to the backend
-    const res = await fetch('http://localhost:5000/api/wardrobe', {
+    const res = await fetch('https://fashion-backend-ajqp.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: itemName, imageUrl: imgSrc }),
@@ -101,7 +101,7 @@ async function planOutfit() {
   }
 
   // Send the planned outfit to the backend
-  const res = await fetch('http://localhost:5000/api/calendar', {
+  const res = await fetch('https://fashion-backend-ajqp.onrender.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ date: plannerDate, outfit: outfitDetails }),
@@ -136,7 +136,7 @@ async function updateProfile() {
     const imgSrc = e.target.result;
 
     // Send profile update data to backend
-    const res = await fetch('http://localhost:5000/api/profile', {
+    const res = await fetch('https://fashion-backend-ajqp.onrender.com', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: profileName, imageUrl: imgSrc }),

@@ -442,7 +442,7 @@
       e.preventDefault();
 
       const formData = new FormData(uploadForm);
-      const res = await fetch('http://localhost:5000/api/upload', {
+      const res = await fetch('https://fashion-backend-ajqp.onrender.com', {
         method: 'POST',
         body: formData,
       });
@@ -452,7 +452,7 @@
       if (res.ok) {
         previewDiv.innerHTML = `
           <p><strong>Uploaded:</strong> ${result.name}</p>
-          <img src="http://localhost:5000${result.imageUrl}" style="max-width: 200px;" />
+          <img src="https://fashion-backend-ajqp.onrender.com${result.imageUrl}" style="max-width: 200px;" />
         `;
         loadWardrobe(); // Refresh the wardrobe
       } else {
@@ -465,7 +465,7 @@
   <script>
     // Load wardrobe items from backend
     async function loadWardrobe() {
-      const res = await fetch('http://localhost:5000/api/wardrobe');
+      const res = await fetch('https://fashion-backend-ajqp.onrender.com');
       const items = await res.json();
       const list = document.querySelector('.wardrobe-list');
       const virtualList = document.querySelector('.virtual-wardrobe .wardrobe-container');
@@ -480,7 +480,7 @@
 
     // AI Outfit Suggestion button
     document.querySelector('.ai-outfit-suggestion button').addEventListener('click', async () => {
-      const res = await fetch('http://localhost:5000/api/suggest-outfit');
+      const res = await fetch(https://fashion-backend-ajqp.onrender.com'');
       const result = await res.json();
       alert(`AI suggests: ${result.outfit}`);
     });
@@ -490,7 +490,7 @@
       const date = document.querySelector('.outfit-calendar input').value;
       if (!date) return alert('Please select a date.');
 
-      const res = await fetch('http://localhost:5000/api/calendar', {
+      const res = await fetch('https://fashion-backend-ajqp.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ date, outfit: 'My Custom Look' }),
