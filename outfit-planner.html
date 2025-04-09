@@ -1,0 +1,149 @@
+<!-- outfit-planner.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Outfit Planner | Fashion Fit</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to top, #f9f9f9, #ffffff);
+      color: #333;
+    }
+
+    .planner-container {
+      max-width: 900px;
+      margin: 5rem auto;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .planner-header {
+      margin-bottom: 3rem;
+    }
+
+    .planner-header h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .planner-header p {
+      color: #777;
+      font-size: 1.2rem;
+    }
+
+    .upload-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #ff1493, #ff69b4);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(255, 20, 160, 0.2);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      background: linear-gradient(145deg, #ff69b4, #ff1493);
+      transform: translateY(-2px);
+    }
+
+    .upload-btn:active {
+      transform: translateY(2px);
+    }
+
+    .uploaded-outfits {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .outfit-card {
+      background: #f2f2f2;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .outfit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .outfit-card img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .outfit-card input,
+    .outfit-card textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .outfit-card button {
+      padding: 0.8rem 1.5rem;
+      background-color: #20c997;
+      border: none;
+      color: #fff;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .outfit-card button:hover {
+      background-color: #17a589;
+    }
+  </style>
+</head>
+<body>
+  <div class="planner-container">
+    <div class="planner-header">
+      <h2>Plan Your Outfits</h2>
+      <p>Upload your outfits and plan your looks ahead of time!</p>
+    </div>
+
+    <div class="upload-section">
+      <a href="#" class="upload-btn">Upload New Outfit</a>
+
+      <!-- Mockup of uploaded outfits -->
+      <div class="uploaded-outfits">
+        <div class="outfit-card">
+          <img src="assets/outfit-placeholder.jpg" alt="Outfit" />
+          <input type="text" placeholder="Outfit Name" />
+          <textarea placeholder="Outfit Description"></textarea>
+          <button>Save Outfit</button>
+        </div>
+        <div class="outfit-card">
+          <img src="assets/outfit-placeholder.jpg" alt="Outfit" />
+          <input type="text" placeholder="Outfit Name" />
+          <textarea placeholder="Outfit Description"></textarea>
+          <button>Save Outfit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

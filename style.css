@@ -1,0 +1,132 @@
+/* css/style.css */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #333;
+  }
+  
+  header {
+    background: #111;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  .ai-outfit-suggestion {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .ai-outfit-suggestion button {
+    background-color: #ff66cc;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ai-outfit-suggestion button:hover {
+    background-color: #ff3399;
+  }
+  .wardrobe-manager {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  }
+  
+  .wardrobe-manager input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .wardrobe-manager button {
+    background-color: #ff66cc;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .wardrobe-list {
+    margin-top: 2rem;
+  }
+  
+  .wardrobe-item {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .wardrobe-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .outfit-calendar {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  }
+  
+  .outfit-calendar button {
+    background-color: #ff66cc;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #planned-outfits {
+    margin-top: 2rem;
+  }
+  
+  #outfit-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .virtual-wardrobe {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  }
+  
+  #3d-model-container {
+    width: 100%;
+    height: 500px;
+    background-color: #f0f0f0;
+    margin-top: 1rem;
+  }
+  

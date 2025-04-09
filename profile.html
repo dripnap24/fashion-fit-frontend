@@ -1,0 +1,151 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Profile | Fashion Fit</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #f9f9f9, #ffffff);
+      color: #333;
+    }
+
+    .profile-container {
+      max-width: 900px;
+      margin: 5rem auto;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .profile-header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff1493;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-header h2 {
+      font-size: 2.5rem;
+      color: #222;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .profile-header p {
+      color: #777;
+      font-size: 1.1rem;
+    }
+
+    .outfits-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    .outfit-card {
+      background: #f2f2f2;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .outfit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .outfit-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #ff1493, #ff69b4);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(255, 20, 160, 0.2);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      background: linear-gradient(145deg, #ff69b4, #ff1493);
+      transform: translateY(-2px);
+    }
+
+    .upload-btn:active {
+      transform: translateY(2px);
+    }
+
+    /* Adding subtle animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-container {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="assets/profile-placeholder.png" alt="Profile Picture" />
+      <div>
+        <h2>@jeremy</h2>
+        <p>Your style is iconic.</p>
+        <a href="#" class="upload-btn">Upload New Outfit</a>
+      </div>
+    </div>
+
+    <h3>My Outfits</h3>
+    <div class="outfits-section">
+      <div class="outfit-card">
+        <img src="assets/outfit1.jpg" alt="Outfit 1" />
+      </div>
+      <div class="outfit-card">
+        <img src="assets/outfit2.jpg" alt="Outfit 2" />
+      </div>
+      <div class="outfit-card">
+        <img src="assets/outfit3.jpg" alt="Outfit 3" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion Fit</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #4A90E2;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+
+    header nav a {
+      color: white;
+      font-size: 1.1em;
+      margin: 0 15px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #f1c40f;
+      border-bottom: 2px solid #f1c40f;
+    }
+
+    /* Main Content Section */
+    main {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    main h2 {
+      font-size: 2em;
+      font-weight: 700;
+      color: #4A90E2;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons a {
+      background-color: #4A90E2;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-buttons a:hover {
+      background-color: #357ABD;
+    }
+
+    /* Challenge Section */
+    .challenge-page {
+      width: 80%;
+      margin-top: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .challenge-header {
+      font-size: 2.2em;
+      color: #4A90E2;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .challenge-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .challenge-card {
+      background-color: #f9f9f9;
+      width: 250px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .challenge-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .challenge-card h3 {
+      font-size: 1.5em;
+      color: #4A90E2;
+    }
+
+    .challenge-card p {
+      font-size: 1em;
+      color: #555;
+      margin: 15px 0;
+    }
+
+    .join-challenge {
+      background-color: #4A90E2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .join-challenge:hover {
+      background-color: #357ABD;
+    }
+
+    /* AI Outfit Suggestion Section */
+    .ai-outfit-suggestion {
+      width: 80%;
+      margin-top: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .ai-outfit-suggestion h2 {
+      font-size: 2.2em;
+      color: #4A90E2;
+      margin-bottom: 20px;
+    }
+
+    .ai-outfit-suggestion button {
+      background-color: #4A90E2;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .ai-outfit-suggestion button:hover {
+      background-color: #357ABD;
+    }
+
+    /* Wardrobe Management Section */
+    .wardrobe-manager {
+      width: 80%;
+      margin-top: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .wardrobe-manager input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .wardrobe-manager input:focus {
+      border-color: #4A90E2;
+    }
+
+    .wardrobe-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .wardrobe-item {
+      width: 150px;
+      margin: 15px;
+      position: relative;
+    }
+
+    .wardrobe-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .wardrobe-item img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Calendar Section */
+    .outfit-calendar {
+      width: 80%;
+      margin-top: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .outfit-calendar input {
+      padding: 10px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .outfit-calendar button {
+      background-color: #4A90E2;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .outfit-calendar button:hover {
+      background-color: #357ABD;
+    }
+
+    .planned-outfits ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .planned-outfits li {
+      font-size: 1.1em;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    /* Virtual Wardrobe Section */
+    .virtual-wardrobe {
+      width: 80%;
+      margin-top: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .virtual-wardrobe .wardrobe-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    /* Upload Form Section */
+    form {
+      width: 80%;
+      margin-top: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    form input[type="text"], form input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      font-size: 1.1em;
+      outline: none;
+    }
+
+    form button {
+      background-color: #4A90E2;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      border: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #357ABD;
+    }
+
+    #preview img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Fashion Fit</h1>
+    <nav>
+      <a href="#challenge-page">Challenges</a>
+      <a href="#ai-outfit-suggestion">AI Outfits</a>
+      <a href="#wardrobe-manager">Wardrobe</a>
+      <a href="#outfit-calendar">Calendar</a>
+      <a href="#virtual-wardrobe">Virtual Wardrobe</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <h2>Your Personalized Fashion Assistant</h2>
+    <p>Get outfit suggestions, manage your wardrobe, and plan your outfits with ease!</p>
+    <div class="cta-buttons">
+      <a href="#ai-outfit-suggestion">Get Outfit Suggestions</a>
+      <a href="#wardrobe-manager">Manage Your Wardrobe</a>
+    </div>
+  </main>
+
+  <!-- Challenge Section -->
+  <div class="challenge-page" id="challenge-page">
+    <h2 class="challenge-header">Join the Fashion Challenge</h2>
+    <div class="challenge-container">
+      <div class="challenge-card">
+        <h3>Style a Look</h3>
+        <p>Show off your styling skills and win exclusive rewards.</p>
+        <a href="#" class="join-challenge">Join Challenge</a>
+      </div>
+      <div class="challenge-card">
+        <h3>Share Your Closet</h3>
+        <p>Collaborate with others and inspire amazing outfits.</p>
+        <a href="#" class="join-challenge">Join Challenge</a>
+      </div>
+      <div class="challenge-card">
+        <h3>Outfit of the Day</h3>
+        <p>Show us your best outfit of the day and gain followers.</p>
+        <a href="#" class="join-challenge">Join Challenge</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI-Powered Outfit Suggestion Section -->
+  <div class="ai-outfit-suggestion" id="ai-outfit-suggestion">
+    <h2>AI-Powered Outfit Suggestions</h2>
+    <p>Our AI will help you find the perfect outfit based on your wardrobe!</p>
+    <button>Get Outfit</button>
+  </div>
+
+  <!-- Wardrobe Management Section -->
+  <div class="wardrobe-manager" id="wardrobe-manager">
+    <h2>Manage Your Wardrobe</h2>
+    <input type="text" placeholder="Search for clothing items...">
+    <div class="wardrobe-list">
+      <div class="wardrobe-item"><img src="item1.jpg" alt="Item 1"></div>
+      <div class="wardrobe-item"><img src="item2.jpg" alt="Item 2"></div>
+      <div class="wardrobe-item"><img src="item3.jpg" alt="Item 3"></div>
+    </div>
+  </div>
+
+  <!-- Outfit Calendar Section -->
+  <div class="outfit-calendar" id="outfit-calendar">
+    <h2>Outfit Calendar</h2>
+    <input type="date">
+    <button>Add Outfit</button>
+    <div class="planned-outfits">
+      <ul>
+        <li>April 8: Casual Look</li>
+        <li>April 9: Business Look</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Virtual Wardrobe Section -->
+  <div class="virtual-wardrobe" id="virtual-wardrobe">
+    <h2>3D Virtual Wardrobe</h2>
+    <div class="wardrobe-container">
+      <div class="wardrobe-item"><img src="item1.jpg" alt="Item 1"></div>
+      <div class="wardrobe-item"><img src="item2.jpg" alt="Item 2"></div>
+      <div class="wardrobe-item"><img src="item3.jpg" alt="Item 3"></div>
+    </div>
+  </div>
+
+  <!-- Upload Form -->
+  <h2>Upload New Wardrobe Item</h2>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Item name" required />
+    <input type="file" name="image" accept="image/*" required />
+    <button type="submit">Upload</button>
+  </form>
+
+  <div id="preview"></div>
+
+  <!-- Existing Upload Script -->
+  <script>
+    const uploadForm = document.getElementById('uploadForm');
+    const previewDiv = document.getElementById('preview');
+
+    uploadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(uploadForm);
+      const res = await fetch('http://localhost:5000/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        previewDiv.innerHTML = `
+          <p><strong>Uploaded:</strong> ${result.name}</p>
+          <img src="http://localhost:5000${result.imageUrl}" style="max-width: 200px;" />
+        `;
+        loadWardrobe(); // Refresh the wardrobe
+      } else {
+        previewDiv.innerHTML = `<p style="color: red;">${result.error}</p>`;
+      }
+    });
+  </script>
+
+  <!-- NEW Backend Integration Script -->
+  <script>
+    // Load wardrobe items from backend
+    async function loadWardrobe() {
+      const res = await fetch('http://localhost:5000/api/wardrobe');
+      const items = await res.json();
+      const list = document.querySelector('.wardrobe-list');
+      const virtualList = document.querySelector('.virtual-wardrobe .wardrobe-container');
+      list.innerHTML = '';
+      virtualList.innerHTML = '';
+      items.forEach(item => {
+        const imgHTML = `<div class="wardrobe-item"><img src="http://localhost:5000${item.imageUrl}" alt="${item.name}" /></div>`;
+        list.innerHTML += imgHTML;
+        virtualList.innerHTML += imgHTML;
+      });
+    }
+
+    // AI Outfit Suggestion button
+    document.querySelector('.ai-outfit-suggestion button').addEventListener('click', async () => {
+      const res = await fetch('http://localhost:5000/api/suggest-outfit');
+      const result = await res.json();
+      alert(`AI suggests: ${result.outfit}`);
+    });
+
+    // Add outfit to calendar
+    document.querySelector('.outfit-calendar button').addEventListener('click', async () => {
+      const date = document.querySelector('.outfit-calendar input').value;
+      if (!date) return alert('Please select a date.');
+
+      const res = await fetch('http://localhost:5000/api/calendar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ date, outfit: 'My Custom Look' }),
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        const ul = document.querySelector('.planned-outfits ul');
+        const li = document.createElement('li');
+        li.textContent = `${result.date}: ${result.outfit}`;
+        ul.appendChild(li);
+      } else {
+        alert(result.error);
+      }
+    });
+
+    // Initial load
+    loadWardrobe();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
